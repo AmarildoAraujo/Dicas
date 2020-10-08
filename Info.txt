@@ -1,0 +1,90 @@
+**************************************************************************
+# Install nvm - Gerenciador de versões Node
+     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
+nvm install NVersãoNode
+nvm list
+nvm use NVersãoNode
+**************************************************************************
+# Install insomnia
+echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
+    | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+
+# Add public key used to verify code signature
+wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
+    | sudo apt-key add -
+
+# Refresh repository sources and install Insomnia
+sudo apt-get update
+sudo apt-get install insomnia
+**************************************************************************
+# Install mongoDb
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+sudo apt-get install gnupg
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+sudo apdate
+sudo apt-get install -y mongodb-org
+Desinstalar - 
+    sudo apt-get purge mongodb-org*
+    sudo rm -r /var/log/mongodb
+    sudo rm -r /var/lib/mongodb
+-------------------------
+sudo systemctl start/stop/restart mongod
+-------------------------
+use dbName        Cria ou seleciona
+  db.createUser({
+    user: "araujo",
+    pwd: "19722009",
+    roles: ["readWrite"]
+  })
+
+**************************************************************************
+# Install redis Mint 19
+wget http://download.redis.io/redis-stable.tar.gz
+tar xvzf redis-stable.tar.gz
+cd redis-stable
+make
+
+# Install redis Mint 20
+sudo apt update && sudo apt upgrade -y
+sudo apt install redis-server -y
+
+redis-server      Startar server
+
+redis-cli
+redis 127.0.0.1:6379> 
+comando: ping <> PONG
+set mykey somevalue <> OK
+get mykey <> "somevalue"
+get key *
+
+redis-cli shutdown
+
+**************************************************************************
+# Install LAMP
+sudo apt update
+sudo apt install apache2
+sudo ufw app info "Apache Full"
+sudo ufw allow in "Apache Full"
+* sudo systemctl restart apache2
+----------
+sudo apt install mysql-server
+sudo mysql_secure_installation
+----------
+sudo apt install php libapache2-mod-php php-mysql
+sudo nano /var/www/html/info.php
+
+sudo nano /etc/apache2/mods-enabled/dir.conf
+
+**************************************************************************
+# Install SSH
+sudo apt update
+sudo apt install -y openssh-server
+sudo ufw allow ssh 
+sudo ufw enable
+sudo ufw reload
+**************************************************************************
+**************************************************************************
+**************************************************************************
+**************************************************************************
+**************************************************************************
+**************************************************************************
