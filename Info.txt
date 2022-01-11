@@ -61,14 +61,26 @@ redis-cli shutdown
 
 **************************************************************************
 # Install LAMP
-sudo apt update
-sudo apt install apache2
-sudo ufw app info "Apache Full"
-sudo ufw allow in "Apache Full"
-* sudo systemctl restart apache2
+sudo apt update && sudo apt install apache2 && sudo ufw app info "Apache Full" && sudo ufw allow in "Apache Full" && sudo systemctl restart apache2
+       /etc/apache2/apache2.conf
+       /etc/apache2/sites-available/000-default.conf
+         chown -R user dominio/
+         chgrp -R www-data dominio/
+         chmod -R 750 dominio/
+         chmod g+s dominio/
+         ls -l
+       sudo systemctl start/stop/restart apache2
 ----------
 sudo apt install mysql-server
 sudo mysql_secure_installation
+ou
+sudo apt install mariadb-client mariadb-server
+sudo mysql_install_db --user =mysql
+sudo systemctl start mariadb
+##Halibitar a iniciar com S.O.
+sudo systemctl enable --now mariadb
+##Config
+mysql_secure_installation
 ----------
 sudo apt install php libapache2-mod-php php-mysql
 sudo nano /var/www/html/info.php
