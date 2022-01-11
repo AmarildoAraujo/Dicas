@@ -102,8 +102,21 @@ sudo ufw reload
   /etc/mosquitto/conf.d/default.conf
      allow_anonymous false
      password_file /etc/mosquitto/passwd
-  systemctl restart mosquitto   
+  service mosquitto restart
 **************************************************************************
+sudo apt-get install ufw                                                 *
+*  Ativar/Desativar: sudo ufw enable/disable                                *
+*  ------Definir regras de firewall---                                      *
+*  ufw allow/deny 20/tcp                                               *
+*  ufw allow/deny 20:30/tcp                                            *
+*  ufw allow http                                                      *
+*  ufw deny from [ENDEREÇOIP]                                          *
+*  ufw allow from [ENDEREÇOIP] to any port [PORTA]                     *
+*  ufw status numbered                                                 *
+*  ufw delete [numbered]                                               *
+*  ufw app list                                                        *
+*  ufw status                                                          *
+
 **************************************************************************
 **************************************************************************
 **************************************************************************
