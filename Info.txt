@@ -98,7 +98,7 @@ sudo ufw reload
 #
   apt install mosquitto
   apt install mosquitto-clients
-  mosquitto_passwd -c /etc/mosquitto/passwd user Password: senha123
+  mosquitto_passwd -c /etc/mosquitto/passwd user
   /etc/mosquitto/conf.d/default.conf
      allow_anonymous false
      password_file /etc/mosquitto/passwd
