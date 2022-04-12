@@ -74,14 +74,39 @@ sudo apt update && sudo apt install apache2 && sudo ufw app info "Apache Full" &
 sudo apt install mysql-server
 sudo mysql_secure_installation
 ou
-sudo apt install mariadb-client mariadb-server
-sudo mysql_install_db --user =mysql
-sudo systemctl start mariadb
-##Halibitar a iniciar com S.O.
-sudo systemctl enable --now mariadb
-##Config
-mysql_secure_installation
+sudo apt install mariadb-server -y
+sudo systemctl status mariadb
+sudo mysql –v
+sudo mysql_secure_installation
+//////////////////////////
+/etc/init.d/mysql stop
+/etc/init.d/mysql start
+//////////////////////////
+CREATE DATABASE databaseName;
+USE databaseName;
+SHOW TABLES;
+
+CREATE USER 'araujo'@'%' IDENTIFIED BY '123456';
+SET PASSWORD FOR 'araujo'@'%' = PASSWORD('123456');
+GRANT ALL PRIVILEGES ON * . * TO 'araujo'@'%';
+FLUSH PRIVILEGES;
+
+//////////////////////////
+sudo mysql -u root -p19722009
+sudo systemctl start mysql
 ----------
+************************************
+sudo systemctl stop mariadb
+sudo mysqld_safe --skip-grant-tables --skip-networking &
+mysql -u root
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'nova-senha';
+DROP USER 'root'@'localhost'
+CREATE USER 'root'@'%' IDENTIFIED BY '';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+sudo systemctl start mariadb
+************************************
 sudo apt install php libapache2-mod-php php-mysql
 sudo nano /var/www/html/info.php
 
