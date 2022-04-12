@@ -33,7 +33,7 @@ sudo systemctl start/stop/restart mongod
 use dbName        Cria ou seleciona
   db.createUser({
     user: "araujo",
-    pwd: "19722009",
+    pwd: "123456789",
     roles: ["readWrite"]
   })
 
@@ -92,7 +92,7 @@ GRANT ALL PRIVILEGES ON * . * TO 'araujo'@'%';
 FLUSH PRIVILEGES;
 
 //////////////////////////
-sudo mysql -u root -p19722009
+sudo mysql -u root -p123456789
 sudo systemctl start mysql
 ----------
 ************************************
