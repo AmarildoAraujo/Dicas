@@ -1,4 +1,9 @@
-CMDBEGINset_input5_single={set_load1=toggle,251&}&CMDEND
+CMDBEGINset_input5_low={nothing&}&CMDEND
+CMDBEGINset_input5_high={nothing&}&CMDEND
+CMDBEGINset_input5_double={nothing&}&CMDEND
+CMDBEGINset_input5_single={nothing&}&CMDEND
+CMDBEGINset_input5_low={nothing&}&CMDEND
+CMDBEGINset_input5_low={set_load1=toggle,251&}&CMDEND
 CMDBEGINset_ssid1=SARA_2Ghz&set_ssid1_pass=12345679&cfg_save=0&mod_reboot=0&CMDEND
 CMDBEGINset_id=250&cfg_save=0&mod_reboot=0&CMDEND
 CMDBEGINset_url_upgrade=http://ec2-34-233-135-145.compute-1.amazonaws.com/FOTA/WShades&CMDEND
