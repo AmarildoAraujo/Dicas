@@ -1,4 +1,36 @@
 **************************************************************************
+1.Instalar VNC Linux Mint
+     sudo apt-get -y remove vino
+2. Instalar x11vnc:
+     sudo apt-get -y install x11vnc
+3. Cria diretorio para Senha do Servidor:
+     sudo mkdir /etc/x11vnc
+4. Criar a senha criptografada:
+     sudo x11vnc --storepasswd /etc/x11vnc/vncpwd
+     Você será solicitado a inserir e verificar a senha. Em seguida, pressione Y para salvar o arquivo de senha.
+5. Criar o arquivo de serviço systemd para o serviço x11vnc:
+     sudo xed /lib/systemd/system/x11vnc.service
+Copie/cole este código no arquivo vazio:
+
+[Unit]
+Description=Start x11vnc at startup.
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/x11vnc -auth guess -forever -noxdamage -repeat -rfbauth /etc/x11vnc/vncpwd -rfbport 5900 -shared
+
+[Install]
+WantedBy=multi-user.target
+
+6: Recarregue os serviços:
+     sudo systemctl daemon-reload
+7. Ative o serviço x11vnc no momento da inicialização:
+     sudo systemctl enable x11vnc.service
+8. Inicie o serviço:
+     Either reboot or
+     sudo systemctl start x11vnc.service
+**************************************************************************
 # Install nvm - Gerenciador de versões Node
      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
 nvm install NVersãoNode
