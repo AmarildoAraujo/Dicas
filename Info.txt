@@ -179,5 +179,16 @@ sudo apt-get install ufw                                                 *
 **************************************************************************
 *Windows
 *    bcdedit -set testsigning off
+*    (Windows) HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PolicyAgent
+*     XP   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\IPSec
+*   No menu Editar , aponte para Novo e selecione Valor DWORD (32 bits).
+*   Digite AssumeUDPEncapsulationContextOnSendRule e pressione ENTER
+*    0- É o valor padrão. Quando definido como 0, o Windows não pode estabelecer associações 
+*        de segurança com servidores localizados atrás de dispositivos NAT.
+*    1- Quando definido como 1, o Windows pode estabelecer associações de segurança com servidores 
+*        localizados atrás de dispositivos NAT.
+*    2- Quando definido como 2, o Windows pode estabelecer associações de segurança quando o servidor 
+*        e o computador cliente VPN (baseados no Windows Vista ou no Windows Server 2008) estão atrás de dispositivos NAT. 
+*
 **************************************************************************
 **************************************************************************
