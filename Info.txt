@@ -1,4 +1,11 @@
 **************************************************************************
+Montar Partição HD
+lista HD
+sudo blkid
+#Inseri UUID na ultima Linha
+sudo nano /etc/
+
+**************************************************************************
 1.Instalar VNC Linux Mint
      sudo apt-get -y remove vino
 2. Instalar x11vnc:
