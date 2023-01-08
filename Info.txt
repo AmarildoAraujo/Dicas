@@ -1,4 +1,6 @@
 **************************************************************************
+sudo apt-get install network-manager-l2tp network-manager-l2tp-gnome apt-transport-https ca-certificates libreswan -y
+**************************************************************************
 Montar Partição HD
 lista HD
 sudo blkid
