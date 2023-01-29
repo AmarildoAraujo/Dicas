@@ -1,3 +1,23 @@
+
+**************************************************************************
+apt install samba -y &&
+systemctl start smbd &&
+useradd userTeste
+smbpasswd -a userTeste
+  /etc/samba/smb.conf
+    [nomeDir]
+     path=/home/user/nomeDir
+     valid users = userTeste,userTeste1
+     read list = userTeste1
+     write list = userTeste
+     browseable = yes
+testparm
+systemctl restart smbd
+
+**************************************************************************
+adduser userTeste
+passwd userTeste
+deluser userTeste
 **************************************************************************
 sudo apt-get install network-manager-l2tp network-manager-l2tp-gnome -y
 **************************************************************************
