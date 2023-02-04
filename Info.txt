@@ -18,6 +18,8 @@ systemctl restart smbd
 adduser userTeste
 passwd userTeste
 deluser userTeste
+/etc/sudoers
+   userTeste  ALL=(ALL:ALL) ALL    
 **************************************************************************
 sudo apt-get install network-manager-l2tp network-manager-l2tp-gnome -y
 **************************************************************************
