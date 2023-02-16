@@ -21,7 +21,9 @@ adduser userTeste
 passwd userTeste
 deluser userTeste
 /etc/sudoers
-   userTeste  ALL=(ALL:ALL) ALL    
+   userTeste  ALL=(ALL:ALL) ALL  
+or
+sudo usermod -aG sudo userTeste
 **************************************************************************
 sudo apt-get install network-manager-l2tp network-manager-l2tp-gnome -y
 **************************************************************************
