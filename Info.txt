@@ -1,4 +1,29 @@
+********************************************************************************************
+sudo cron status
+sudo service cron start/stop/restart
+crontab -l  = lista de tarefas
+crontab -e  = Edita lista de tarefas
+   |minutos|horas|dia mês|mês |dias semana| comando
+   | 0-59  | 0-23|  1-31 |1-12|     0-7   |
+   |   *   |  *  |   *   |  * |     *     |
+   |  */5  |  *  |   *   |  * |     *     | a cada 5 minutos executa 
+   |5,20,30| */2 |   *   |  * |     *     | a cada 2 horas, minutos 2,20 e 30 executa
+   |   0   | 9-17|   *   |  * |     1     | toda segunda-feira, das 9h às 17h, no minuto 0
+salva o arquivo
+********************************************************************************************
+nano /etc/systemd/system/meuService.service
+   [Unit]
 
+    Description=your description
+    [Service]
+
+    ExecStart=/path/to/command/or/script
+    [Install]
+    WantedBy=multi-user.target
+systemctl enable meuService.service
+ou
+crontab -e
+@reboot /caminho/para/comando/ou/script
 **************************************************************************
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 **************************************************************************
