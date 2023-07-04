@@ -1,3 +1,25 @@
+********************************************
+Cadastrar:
+  Desligue o Motor
+  Pressione Up até acender led
+  Ligue o Motor
+  O motor vai bipar
+  Pressione Up
+********************************************
+Reset:
+  Pressione Stop  até o motor bipar
+  Pressione Prog
+********************************************
+Clonar Controle
+  Pressione Stop até o motor bipar
+********************************************
+Up+Down por 5s
+Down    por 5s
+Up 
+deixa o motor até o lugar desejado
+Stop
+Up+Stop
+********************************************
 CMDBEGINset_input5_low={nothing&}&CMDEND
 CMDBEGINset_input5_high={nothing&}&CMDEND
 CMDBEGINset_input5_double={nothing&}&CMDEND
