@@ -1,0 +1,25 @@
+Reset RTL
+3 + 10 + 3 - Sinaliza
+Prog       - Sinaliza
+Obs: Pode durar até 12 segundos
+------------------------------------
+Verificar Sentido
+Up + Down  - Sinaliza
+Up - Sentido Down > My - Sinaliza
+------------------------------------
+Fim de Curso
+Down Até Limite > My + Up   > Subirá  > My p/ parar
+Up Até o Limite > My + Down > Descerá > My p/ parar
+-------------------------------------
+Corrigir fim de curso
+
+-------------------------------------
+Finalizar Programação
+My   - Sinaliza
+Prog - Sinaliza
+-------------------------------------
+Posição Favorita
+Selecione posição favorita
+My   - Sinaliza
+-------------------------------------
+
