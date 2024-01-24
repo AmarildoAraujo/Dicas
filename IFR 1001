@@ -1,0 +1,13 @@
+IFR 1001 STAND ALONE
+Retire o môdulo zigby
+Reset:  Com a porta aberta, pressione e mantenha por 8 segundos o botão Cadastro, até o teclado acender
+        Digite 123 578 951
+        Pressione e mantenha botão Engrenagem até Bip e Apagar Teclado
+Senha Administrador até 12 digitos. (User 0)
+Cadastrar: Pressione o botão cadastro, digite a senha do Administrador(1234) e botão confirma.
+           Toque senha 01(Selecionar Usuário)   Digite a nova senha e e botão confirma.
+                                                Digite a nova senha e e botão confirma.
+Travamento Automatico: Digite senha > pressione engrenagem até beep, pressione engrenagem > (4 Habilita | 7 Desabilita)
+                       Após desabilitar pressione engranagem para travar a tranca.
+Abrir Silenciosamente: Pressione engrenagem > digite a senha,
+Volume Som: Digite senha > pressione engrenagem até beep,(3 Aumenta | 6 Diminui), confirma
