@@ -1,0 +1,183 @@
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+
+#Diversos
+127.0.0.1 www.tumblr.com
+127.0.0.1 www.tumblr.com.br
+127.0.0.1 tumblr.com
+127.0.0.1 tumblr.com.br
+
+
+127.0.0.1 twitter.com.br
+127.0.0.1 www.twitter.com.br
+127.0.0.1 apps.facebook.com
+127.0.0.1 badoo.com.br
+127.0.0.1 www.badoo.com.br
+127.0.0.1 badoo.com
+127.0.0.1 www.badoo.com
+127.0.0.1 instagram.com
+127.0.0.1 www.instagram.com
+127.0.0.1 instagram.com.br
+127.0.0.1 www.instagram.com
+127.0.0.1 pt-br.facebook.com
+
+127.0.0.1 www.facebook.com.br
+127.0.0.1 br.linkedin.com
+127.0.0.1 www.linkedin.com
+127.0.0.1 badoo.com
+127.0.0.1 badoo.com.br
+127.0.0.1 www.mercadolivre.com.br
+127.0.0.1 www.mercadolivre.com
+127.0.0.1 www.mercadorevelado.com
+
+127.0.0.1 orkut.com
+127.0.0.1 www.orkut.com
+127.0.0.1 images.orkut.com
+127.0.0.1 www.powerscrap.com
+127.0.0.1 powerscrap.com
+127.0.0.1 rss.powerscrap.com
+127.0.0.1 www.ocurioso.com
+127.0.0.1 ocurioso.com
+127.0.0.1 orkut.etc.br
+127.0.0.1 www.globo.com
+
+127.0.0.1 superdownloads.com.br
+127.0.0.1 www.uol.com.br
+127.0.0.1 www.baixaki.com.br
+127.0.0.1 www.google.com.br
+127.0.0.1 www.google.com
+
+127.0.0.1 www.folhavitoria.com.br
+127.0.0.1 banco.bradesco
+
+#Tubes
+
+127.0.0.1 www.youtube.com
+127.0.0.1 www.youtube.com
+127.0.0.1 www.youtube.com.br
+127.0.0.1 tube.aeiou.pt
+127.0.0.1 www.youporn.com
+127.0.0.1 www.porntube.com
+127.0.0.1 www.amadorastube.com
+127.0.0.1 www.tube8.com
+127.0.0.1 www.redtube.com
+127.0.0.1 www.tubepornfilm.com
+127.0.0.1 www.longporntube.com
+127.0.0.1 www.xtube.com
+127.0.0.1 www.xnxx.com
+127.0.0.1 www.crocotube.com
+127.0.0.1 www.redtube.com
+127.0.0.1 www.xvideos.com
+127.0.0.1 www.xvideos.com.br
+
+
+# web proxies
+127.0.0.1 www.kproxy.com
+127.0.0.1 www.bitty.com
+127.0.0.1 calculatepie.com
+127.0.0.1 www.englishtunnel.com
+127.0.0.1 englishtunnel.com
+127.0.0.1 www.safehazard.com
+127.0.0.1 safehazard.com
+127.0.0.1 www.saferforwork.net
+127.0.0.1 saferforwork.net
+127.0.0.1 www.browseatwork1.com
+127.0.0.1 browseatwork1.com
+127.0.0.1 planetdangerous.com
+127.0.0.1 www.atunnel.com
+127.0.0.1 atunnel.com
+127.0.0.1 www.btunnel.com
+127.0.0.1 btunnel.com
+127.0.0.1 www.ctunnel.com
+127.0.0.1 ctunnel.com
+127.0.0.1 www.dtunnel.com
+127.0.0.1 dtunnel.com
+127.0.0.1 www.vtunnel.com
+127.0.0.1 vtunnel.com
+127.0.0.1 www.vttunnel.com
+127.0.0.1 vttunnel.com
+127.0.0.1 proxify.com
+127.0.0.1 proxyforpeace.com
+127.0.0.1 weboogle.info
+127.0.0.1 beatfiltering.com
+127.0.0.1 choosethisproxy.com
+127.0.0.1 pagewash.com
+127.0.0.1 proxyhog.info
+127.0.0.1 secretip.com
+127.0.0.1 webunlocker.com
+127.0.0.1 pickthisproxy.com
+127.0.0.1 www.polysolve.com
+127.0.0.1 polysolve.com
+127.0.0.1 www.vpntunnel.net
+127.0.0.1 vpntunnel.net
+127.0.0.1 www.geotunnel.com
+127.0.0.1 geotunnel.com
+127.0.0.1 backfox.com
+127.0.0.1 www.calculatepie.com
+127.0.0.1 calculatepie.com
+127.0.0.1 www.mathtunnel.com
+127.0.0.1 mathtunnel.com
+
+# messenger
+127.0.0.1 gateway.messenger.hotmail.com
+
+127.0.0.1 msn.com
+127.0.0.1 gateway.messenger.hotmail.com
+127.0.0.1 gtwy.messenger.hotmail.com
+127.0.0.1 messenger.hotmail.com
+127.0.0.1 svcs.microsoft.com
+127.0.0.1 webmessenger.msn.com
+127.0.0.1 kickme.to/msnmessenger2go
+127.0.0.1 iloveim.com
+127.0.0.1 e-messenger.net
+127.0.0.1 atlanta.e-messenger.net
+127.0.0.1 boston.e-messenger.net
+127.0.0.1 msn2go.com
+127.0.0.1 msn2go.com.br
+127.0.0.1 piglet-im.com
+127.0.0.1 webmsn.net
+127.0.0.1 e-messenger.cl
+127.0.0.1 passaport.netport.net
+127.0.0.1 wwwl.meebo.com
+127.0.0.1 meebo.com
+127.0.0.1 www.meebo.com
+127.0.0.1 ebuddy.com
+127.0.0.1 www.ebuddy.com
+127.0.0.1 www.messemgerfx.com
+127.0.0.1 messemgerfx.com
+127.0.0.1 69.36.226.110
+127.0.0.1 69.36.226.150
+127.0.0.1 69.36.226.175
+127.0.0.1 69.36.226.189
+127.0.0.1 64.92.172.107
+127.0.0.1 216.129.112.85
+127.0.0.1 216.129.112.86
+127.0.0.1 216.129.112.116
+127.0.0.1 www.meebo.com.br
+127.0.0.1 meebo.com.br
+127.0.0.1 chicago.e-messenger.net
+127.0.0.1 vicotria.e-messenger.net
+127.0.0.1 msn2go.com.br
+
+// bloquear 
+
+                            
