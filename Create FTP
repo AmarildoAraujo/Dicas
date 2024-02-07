@@ -1,0 +1,143 @@
+#sudo apt install -y vsftpd
+#sudo cp /etc/vsftpd.conf /etc/vsftpd.conf_default
+#sudo systemctl start vsftpd
+#sudo systemctl enable vsftpd
+
+Podemos usar qualquer cliente FTP para acessar os arquivos hospedados no servidor através do vsftpd
+#sudo useradd -m rede
+#sudo passwd rede
+
+Depois vamos acessar a pasta de usuário recém-criada:
+#cd /home/rede
+#sudo mkdir ftp
+#sudo chown nobody:nogroup /home/rede/ftp
+
+Agora removemos as permissões de gravação desta pasta:
+#sudo chmod a-w /home/rede/ftp
+
+Continuamos criando o diretório de contêiner de arquivo e atribuiremos a propriedade:
+#sudo mkdir /home/rede/ftp/arquivos
+#sudo chown rede:rede /home/rede/ftp/arquivos
+
+Neste ponto, vamos criar um arquivo de teste na pasta de arquivos:
+#echo "vsftpd arquivo de exemplo" | sudo tee /home/rede/ftp/arquivos/exemplo.txt
+
+Nesta etapa vamos abrir as portas 20 e 21 para o tráfego FTP. As portas 40000-50000 serão reservadas para o intervalo de portas passivas que eventualmente serão definidas no arquivo de configuração e a porta 990 será usada quando o TLS for habilitado. Execute o seguinte para fazer isso:
+#sudo ufw allow 20/tcp; sudo ufw allow 21/tcp; sudo ufw allow 990/tcp; sudo ufw allow 40000:50000/tcp
+
+configuração vsftpd:
+#sudo nano /etc/vsftpd.conf
+anonymous_enable=NO
+write_enable=YES
+local_enable=YES
+chroot_local_user=YES
+
+Também adicionaremos manualmente alguns novos valores ao final do arquivo. Esta irá permitir que a configuração funcione com o usuário atual e qualquer outro usuário adicionado posteriormente:
+user_sub_token=$USER
+local_root=/home/$USER/ftp
+
+#sudo systemctl restart vsftpd
+
+Usaremos TTL / SSL para garantir a segurança. Devemos criar o certificado SSL e usá-lo para proteger o servidor FTP. Faremos isso com o comando:
+#sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/vsftpd.pem -out /etc/ssl/private/vsftpd.pem
+
+A bandeira -dias torna o certificado válido por um ano e incluímos um Chave privada RSA de 2048 bits no mesmo comando. Quando você terminar de criar o certificado, abra o arquivo de configuração novamente:
+#sudo nano /etc/vsftpd.conf
+No final do arquivo, devemos encontrar duas linhas que começam com «rsa«. Comente ambas as linhas e escreva o seguinte:
+rsa_cert_file=/etc/ssl/private/vsftpd.pem
+rsa_private_key_file=/etc/ssl/private/vsftpd.pem
+
+Agora vamos habilitar SSL para que apenas clientes que tenham SSL habilitado possam se conectar. Altere o valor de ssl_enable para YES:
+ssl_enable=YES
+
+Pára não permitir conexões anônimas por SSL, adicione as linhas:
+allow_anon_ssl=NO
+force_local_data_ssl=YES
+force_local_logins_ssl=YES
+
+Configure o servidor para usar TLS, adicionando:
+ssl_tlsv1=YES
+ssl_sslv2=NO
+ssl_sslv3=NO
+
+Nós também vamos conseguir isso não há necessidade de reutilizar SSL, porque pode fazer com que muitos clientes FTP não funcionem. O que mais vamos usar suítes de criptografia de alta criptografia, adicionando as linhas:
+require_ssl_reuse=NO
+ssl_ciphers=HIGH
+
+Nós salvamos o arquivo e nós reiniciamos o serviço:
+#sudo systemctl restart vsftpd
+
+
+https://ubunlog.com/pt/vsftpd-instalar-un-servidor-ftp-ubuntu/
+
+----------------------
+O vsftpd é um servidor de FTP fantástico, que oferece funcionalidades bastante interessantes, das quais se destacam:
+
+    Suporte para Virtual IP
+    Suporte para utilizadores virtuais
+    Suporte para IPv6
+    Encriptação de dados através da integração do protocolo SSL
+    Controlo da largura de banda
+    Configuração por utilizadore
+
+Para instalar um servidor de FTP no Ubuntu ou Mint, o utilizador apenas necessita de realizar os seguintes passos.
+
+Passo 1 - Instalar o vsftpd
+
+##sudo apt -y install vsftpd
+
+Passo 2 – Configurações do serviço vsftpd Por norma os ficheiros de configuração dos serviços encontram-se em /etc. No caso do vsftpd o ficheiro de configuração é /etc/vsftpd.conf Vamos abrir o ficheiro e editar/rever algumas directivas:
+
+##sudo nano -w /etc/vsftpd.conf
+
+Ficheiro vsftpd.confDesactivar o acesso “anónimo”.
+
+anonymous_enable=NO
+
+Permitir o acesso a utilizadores locais
+
+local_enable=YES
+
+Passo 3 – Adicionar uma Shell “fake” Por forma a não permitir a autenticação dos utilizadores FTP via SSH ou login local vamos adicionar uma shell fake e 
+assim limitar o acesso a esses utilizadores. Desta forma, as credenciais de um utilizador FTP apenas servem para se autenticar via FTP.
+
+Vamos então abrir o ficheiro /etc/shells e adicionar a linha /bin/false
+
+# /etc/shells: valid login shells
+/bin/sh
+/bin/bash
+/bin/false
+
+Passo 4 - Criar um utilizador (conta) FTP
+
+Como já referido anteriormente, é importante que as credenciais de uma conta FTP apenas funcionam para autenticação via FTP. Neste passo vamos proceder ao seguinte:
+
+    Criar pasta do utilizador (ex. /home/ftp/ftpuser)
+
+sudo mkdir -p /home/media/araujo/Dados/arquivos
+
+    Criar utilizador, definir qual a sua directoria e associá-lo a shell “fake” (ex. user ftpuser)
+
+sudo useradd rede -d /mnt/hd/arquivos -s /bin/false
+sudo useradd rede -d /home/ftp -s /bin/false
+
+    Criar/mudar a password do utilizador (com o comando passwd)
+
+sudo passwd rede
+
+É também importante que o utilizador tenha permissões de escrita na sua pasta uma vez que a pasta criada ficou associada ao root. Para isso podemos simplesmente mudar o owner da pasta através do comando
+
+sudo chown rede /mnt/hd/arquivos
+
+Passo 5 – As configurações estão feitas, teremos apenas de reiniciar o serviço vsftpd através do comando:
+
+Coloquei entretanto 1 ficheiro na pasta /home/ftp/ftpuser/ para exemplificar o exemplo.
+
+Nota: No ficheiro de configuração do serviço (/etc/vsftpd.conf)  é possível especificar muitos parâmetros como por exemplo: o número de clientes, adicionar um banner, etc etc.
+Como aceder ao servidor FTP
+
+Depois do serviço montado o acesso ao FTP pode ser realizado via um simples browser ou através de uma aplicação cliente para FTP (ex. filezzila, fireFTP). Neste exemplo vou usar o filezzila. Para isso, basta introduzir o IP do servidor de FTP, o utilizador e a respectiva password.
+
+ftp_09
+
+O vsftpd é o meu servidor de FTP favorito, pelas características já referidas. Além disso, como puderam comprovar, o vsftpd é muito simples de instalar e de configurar.  Experimentem vocês mesmos instalar e configurar um autentico servidor FTP. Em caso de duvidas, estamos cá para ajudar.
