@@ -1,0 +1,35 @@
+ssh root@vps7.cloudpublic.com.br  3i1dQq86o0D
+sudo passwd root
+adduser araujo
+usermod -aG sudo araujo
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+##Segunda forma de conectar
+#Lib libreWan
+apt-get install libnss3-dev libnspr4-dev pkg-config libpam-dev libcap-ng-dev libcap-ng-utils libselinux-dev libcurl3-nss-dev flex bison gcc make libldns-dev libunbound-dev libnss3-tools libevent-dev xmlto libsystemd-dev 
+
+wget https://get.vpnsetup.net -O vpn.sh && sudo sh vpn.sh
+
+***********************************************************************
+Autenticação
+nano -w vpn.sh
+[Replace with your own values: YOUR_IPSEC_PSK, YOUR_USERNAME and YOUR_PASSWORD]
+sudo sh vpn.sh
+To manage IKEv2 clients, run: sudo ikev2.sh
+sudo ikev2.sh --listclients
+***********************************************************************
+Server IP: 51.245.117.2
+IPsec PSK: Khvqz3cjSoZnu
+Username: vpnuser
+Password: 39iHFApmC
+***********************************************************************
+sudo service ipsec restart
+service xl2tpd restart
+***********************************************************************
+client vpn L2TP
+sudo apt install network-manager-l2tp network-manager-l2tp-gnome
+
+***********************************************************************
+#Configurar Clientes
+https://vpnsetup.net/clients
+
