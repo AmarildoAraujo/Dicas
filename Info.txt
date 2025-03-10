@@ -156,6 +156,7 @@ redis-cli shutdown
 sudo apt update && sudo apt install apache2 php php-curl php-mysql -y && sudo ufw app info "Apache Full" && sudo ufw allow in "Apache Full" && sudo systemctl restart apache2
        /etc/apache2/apache2.conf
        /etc/apache2/sites-available/000-default.conf
+       /etc/apache2/envvars
          chown -R user dominio/
          chgrp -R www-data dominio/
          chmod -R 750 dominio/
