@@ -168,6 +168,8 @@ sudo apt install mysql-server
 sudo mysql_secure_installation
 ou
 sudo apt install mariadb-server -y
+/etc/mysql/mariadb.conf.d/50-server.cnf
+   bind-address 0.0.0.0
 sudo systemctl status mariadb
 sudo mysql –v
 sudo mysql_secure_installation
